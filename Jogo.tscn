@@ -14,3 +14,5 @@ script = ExtResource( 3 )
 position = Vector2( 240, 233 )
 
 [node name="Picareta" type="Node2D" parent="."]
+
+[connection signal="input_event" from="Pedra" to="." method="_on_Pedra_input_event"]
