@@ -16,6 +16,12 @@ script = ExtResource( 3 )
 [node name="Pedra" parent="." instance=ExtResource( 1 )]
 position = Vector2( 240, 233 )
 
+[node name="Tween" type="Tween" parent="Pedra"]
+
+[node name="shakeTimer" type="Timer" parent="Pedra"]
+wait_time = 0.1
+one_shot = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Button" type="Button" parent="CanvasLayer"]
@@ -29,4 +35,5 @@ __meta__ = {
 }
 
 [connection signal="input_event" from="Pedra" to="." method="_on_Pedra_input_event"]
+[connection signal="timeout" from="Pedra/shakeTimer" to="Pedra" method="_on_Timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Button" to="Picareta" method="_on_Button_pressed"]

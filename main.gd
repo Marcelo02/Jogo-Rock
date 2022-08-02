@@ -3,7 +3,6 @@ extends Node2D
 
 
 
-
 func _ready():
 	var picareta = $Picareta #pega o node da picareta
 	Input.set_custom_mouse_cursor(picareta.icone) #coloca o icone da picareta no mouse
@@ -16,6 +15,7 @@ func _on_Pedra_input_event(viewport, event, shape_idx):
 			
 			var picareta = $Picareta #pega o node da picareta
 			var pedra = $Pedra #pega o node da pedra
+			pedra.shake(80)
 			
 			if pedra.vida - picareta.dano > 0:
 				pedra.vida -= picareta.dano
