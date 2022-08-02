@@ -4,10 +4,9 @@ export var durabilidade = 0
 export var recursos =["carvao","ferro","ouro"]
 export var vida = 2
 export var picareta_Dano = 1
-var picareta_Ferro = load("res://assets/Picaretas/picareta.png")
 
-func _ready():
-	Input.set_custom_mouse_cursor(picareta_Ferro)
+
+
 
 func _on_Quebrar():
 	vida -= picareta_Dano
@@ -16,3 +15,8 @@ func _on_Quebrar():
 		print("Quebrada")
 	else:
 		pass
+
+
+func _on_Button_pressed():
+	picareta_Dano += 1
+	print("Upgraded to:" + str(picareta_Dano) )

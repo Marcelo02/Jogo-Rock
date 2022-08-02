@@ -13,5 +13,16 @@ script = ExtResource( 3 )
 [node name="Pedra" parent="." instance=ExtResource( 1 )]
 position = Vector2( 240, 233 )
 
+[node name="Button" type="Button" parent="."]
+margin_left = 2.0
+margin_top = 59.0
+margin_right = 150.0
+margin_bottom = 82.0
+text = "Melhorar Picareta"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="Quebrar" from="." to="Pedra" method="_on_Quebrar"]
 [connection signal="input_event" from="Pedra" to="." method="_on_Pedra_input_event"]
+[connection signal="pressed" from="Button" to="Pedra" method="_on_Button_pressed"]
