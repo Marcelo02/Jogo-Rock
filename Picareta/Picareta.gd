@@ -1,7 +1,7 @@
 extends Node2D
 
 export var dano = 1
-var icone = load("res://assets/Picaretas/picareta.png")
+var icone = load("res://assets/Picaretas/picareta_resize.png")
 
 
 
