@@ -9,16 +9,15 @@ onready var shakeTimer = $shakeTimer
 onready var tween = $Tween
 var shake_amount = 0
 
-
+#Setta process como falso no começo para poder preparar o shafe
 func _ready():
 	set_process(false)
 
-
 func _process(delta):
+	#Shake da pedra
 	position = Vector2(rand_range(-shake_amount, shake_amount), rand_range(-shake_amount, shake_amount)) * delta + original_Pos
 
-
-func shake(new_shake, shake_time=0.2, shake_limit=100):
+func shake(new_shake, shake_time=0.2, shake_limit=150):
 	shake_amount += new_shake
 	if shake_amount > shake_limit:
 		shake_amount = shake_limit
@@ -28,7 +27,6 @@ func shake(new_shake, shake_time=0.2, shake_limit=100):
 	tween.stop_all()
 	set_process(true)
 	shakeTimer.start()
-
 
 func _on_Timer_timeout():
 	shake_amount = 0
