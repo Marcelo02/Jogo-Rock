@@ -5,6 +5,8 @@ onready var picareta = $Picareta #pega o node da picareta
 onready var pedra = $Pedra #pega o node da pedra
 onready var Level = $CanvasLayer/Level
 onready var Barra = $CanvasLayer/TextureProgress
+onready var Recursos = $Recursos
+onready var Rec_Label = $CanvasLayer/Recursos_label
 
 func _ready():
 	Input.set_custom_mouse_cursor(picareta.icone) #coloca o icone da picareta no mouse
@@ -14,6 +16,7 @@ func _ready():
 
 func _process(delta):
 	Barra.value = pedra.vida
+	Rec_Label.text = "Dinheiro: " + str(Recursos.dinheiro) + "\n" + "Carvão: " + str(Recursos.carvao) + "\n" + "Ferro: " + str(Recursos.ferro) + "\n" + "Ouro: " + str(Recursos.ferro)
 
 # Função que identifica o clique do mouse na pedra
 func _on_Pedra_input_event(viewport, event, shape_idx):
