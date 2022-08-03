@@ -3,10 +3,17 @@ extends Node2D
 			
 onready var picareta = $Picareta #pega o node da picareta
 onready var pedra = $Pedra #pega o node da pedra
-
+onready var Level = $CanvasLayer/Level
+onready var Barra = $CanvasLayer/TextureProgress
 
 func _ready():
 	Input.set_custom_mouse_cursor(picareta.icone) #coloca o icone da picareta no mouse
+	Barra.max_value = pedra.vida
+	Barra.value = pedra.vida
+	
+
+func _process(delta):
+	Barra.value = pedra.vida
 
 
 # Função que identifica o clique do mouse na pedra
@@ -20,8 +27,10 @@ func _on_Pedra_input_event(viewport, event, shape_idx):
 			if pedra.vida - picareta.dano > 0:
 				pedra.vida -= picareta.dano
 				print("Vida:"+ str(pedra.vida))
+				Barra.value = pedra.vida
 			else:
 				print("Quebrada")
 				pedra.nivel += 1
 				pedra.vida = pedra.nivel
-				print("Nivel:" + str(pedra.nivel))
+				Level.text = "Lvl. " + str(pedra.nivel)
+				Barra.max_value = pedra.vida
