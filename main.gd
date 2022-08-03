@@ -15,7 +15,6 @@ func _ready():
 func _process(delta):
 	Barra.value = pedra.vida
 
-
 # Função que identifica o clique do mouse na pedra
 func _on_Pedra_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
