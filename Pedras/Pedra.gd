@@ -1,8 +1,21 @@
 extends Node2D
 
 export var durabilidade = 0
-export var recursos =["carvao","ferro","ouro"]
-export var drop_chance = [1,0.10,0.5]
+export var recursos =[ #array que armazena as informações dos recursos que irão dropar
+	{"name":"carvao",
+	"drop_chance": 100,
+	"drop_range": 10
+	},
+	{"name":"ferro",
+	"drop_chance": 50,
+	"drop_range": 4
+	
+	},
+	{"name": "ouro",
+	"drop_chance": 10,
+	"drop_range": 2
+	}]
+
 export var vida = 2
 export var nivel = 1
 onready var original_Pos = position
