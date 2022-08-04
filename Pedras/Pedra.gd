@@ -2,20 +2,25 @@ extends Node2D
 
 export var durabilidade = 0
 export var recursos =["carvao","ferro","ouro"]
+export var drop_chance = [1,0.10,0.5]
 export var vida = 2
 export var nivel = 1
 onready var original_Pos = position
 onready var shakeTimer = $shakeTimer
 onready var tween = $Tween
 var shake_amount = 0
+signal quebrou
 
 #Setta process como falso no começo para poder preparar o shafe
 func _ready():
-	set_process(false)
+	pass
 
 func _process(delta):
 	#Shake da pedra
 	position = Vector2(rand_range(-shake_amount, shake_amount), rand_range(-shake_amount, shake_amount)) * delta + original_Pos
+	
+	if vida <= 0:
+		emit_signal("quebrou")
 
 func shake(new_shake, shake_time=0.2, shake_limit=150):
 	shake_amount += new_shake
@@ -25,12 +30,10 @@ func shake(new_shake, shake_time=0.2, shake_limit=150):
 	shakeTimer.wait_time = shake_time
 	
 	tween.stop_all()
-	set_process(true)
 	shakeTimer.start()
 
 func _on_Timer_timeout():
 	shake_amount = 0
-	set_process(false)
 	
 	tween.interpolate_property(self, "position", position, original_Pos,
 	0.1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
