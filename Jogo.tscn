@@ -14,7 +14,7 @@ script = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="upgrade_Pick" type="Button" parent="CanvasLayer"]
 margin_left = 6.0
 margin_top = 138.0
 margin_right = 154.0
@@ -83,11 +83,47 @@ position = Vector2( -9, 8 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 
+[node name="sell_Coal" type="Button" parent="CanvasLayer"]
+margin_left = 714.0
+margin_top = 148.0
+margin_right = 817.0
+margin_bottom = 168.0
+text = "Vender Carvão: 1$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sell_Iron" type="Button" parent="CanvasLayer"]
+margin_left = 714.0
+margin_top = 176.0
+margin_right = 842.0
+margin_bottom = 196.0
+text = "Vender Ferro: 5$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sell_Gold" type="Button" parent="CanvasLayer"]
+margin_left = 714.0
+margin_top = 204.0
+margin_right = 842.0
+margin_bottom = 224.0
+text = "Vender Ouro: 10$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Picareta" parent="." instance=ExtResource( 4 )]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 427.5, 239 )
-scale = Vector2( 4, 4 )
+position = Vector2( 426.887, 240.5 )
+scale = Vector2( 4.00833, 4.00833 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[connection signal="pressed" from="CanvasLayer/Button" to="Picareta" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/upgrade_Pick" to="Picareta" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/sell_Coal" to="." method="_on_sell_Coal"]
+[connection signal="pressed" from="CanvasLayer/sell_Iron" to="." method="_on_sell_Iron"]
+[connection signal="pressed" from="CanvasLayer/sell_Gold" to="." method="_on_sell_Gold"]

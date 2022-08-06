@@ -68,9 +68,33 @@ func _on_Pedra_quebrou():
 	Level.text = "Lvl. " + str(pedra.nivel)
 	Barra.max_value = pedra.vida
 	
-	
-	
-		
-	
-	
-	
+
+
+func _on_sell_Coal():
+	var coal_Price = 1
+	if Recursos.carvao > 0:
+		Recursos.carvao -= 1
+		Recursos.dinheiro += coal_Price
+	else:
+		print("Você não tem carvão!")
+		pass # Replace with function body.
+
+
+func _on_sell_Iron():
+	var iron_Price = 5
+	if Recursos.ferro > 0:
+		Recursos.ferro -= 1
+		Recursos.dinheiro += iron_Price
+	else:
+		print("Você não tem Ferro!")
+		pass # Replace with function body.
+
+
+func _on_sell_Gold():
+	var gold_Price = 10
+	if Recursos.ouro > 0:
+		Recursos.ouro -= 1
+		Recursos.dinheiro += gold_Price
+	else:
+		print("Você não tem Ouro!")
+		pass # Replace with function body.
