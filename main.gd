@@ -7,7 +7,14 @@ onready var pedra = cena_pedra.instance()
 onready var Level = $CanvasLayer/Level
 onready var Barra = $CanvasLayer/TextureProgress
 onready var Rec_Label = $CanvasLayer/Recursos_label
-
+onready var shop_Button = $CanvasLayer/upgrade_Shop
+onready var coal_Button = $CanvasLayer/sell_Coal
+onready var iron_Button = $CanvasLayer/sell_Iron
+onready var gold_Button = $CanvasLayer/sell_Gold
+var coal_Price = 1
+var iron_Price = 5
+var gold_Price = 10
+var upgrade_Shop = 5
 
 onready var Recursos = { #dicionario que armazena os valores dos recursos
 	"dinheiro" : 0,
@@ -69,9 +76,7 @@ func _on_Pedra_quebrou():
 	Barra.max_value = pedra.vida
 
 
-
 func _on_sell_Coal():
-	var coal_Price = 1
 	if Recursos.carvao > 0:
 		Recursos.carvao -= 1
 		Recursos.dinheiro += coal_Price
@@ -81,7 +86,6 @@ func _on_sell_Coal():
 
 
 func _on_sell_Iron():
-	var iron_Price = 5
 	if Recursos.ferro > 0:
 		Recursos.ferro -= 1
 		Recursos.dinheiro += iron_Price
@@ -91,10 +95,25 @@ func _on_sell_Iron():
 
 
 func _on_sell_Gold():
-	var gold_Price = 10
 	if Recursos.ouro > 0:
 		Recursos.ouro -= 1
 		Recursos.dinheiro += gold_Price
 	else:
 		print("Você não tem Ouro!")
 		pass # Replace with function body.
+
+
+func _on_upgrade_Shop():
+	if  Recursos.dinheiro < upgrade_Shop:
+		print("Você não tem dinheiro.")
+		pass
+	else:
+		Recursos.dinheiro -= upgrade_Shop
+		coal_Price += int(round(coal_Price*0.2))
+		iron_Price += int(round(iron_Price*0.3))
+		gold_Price += int(round(gold_Price*0.4))
+		upgrade_Shop += int(round(upgrade_Shop*0.2))
+		coal_Button.text = "Vender Carvão: " + str(coal_Price) + "$"
+		iron_Button.text = "Vender Ferro: " + str(iron_Price) + "$"
+		gold_Button.text = "Vender Ouro: " + str(gold_Price) + "$"
+		shop_Button.text = "Melhorar Loja: " + str(upgrade_Shop) + "$"

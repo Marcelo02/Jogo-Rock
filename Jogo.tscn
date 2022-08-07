@@ -137,3 +137,4 @@ __meta__ = {
 [connection signal="pressed" from="CanvasLayer/sell_Coal" to="." method="_on_sell_Coal"]
 [connection signal="pressed" from="CanvasLayer/sell_Iron" to="." method="_on_sell_Iron"]
 [connection signal="pressed" from="CanvasLayer/sell_Gold" to="." method="_on_sell_Gold"]
+[connection signal="pressed" from="CanvasLayer/upgrade_Shop" to="." method="_on_upgrade_Shop"]
