@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Pedras/Pedra.gd" type="Script" id=1]
 [ext_resource path="res://assets/Pedras/rock.png" type="Texture" id=2]
+[ext_resource path="res://assets/Sounds/Hit sound.mp3" type="AudioStream" id=3]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -32,5 +33,9 @@ shape = SubResource( 1 )
 [node name="shakeTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -9.613
 
 [connection signal="timeout" from="shakeTimer" to="." method="_on_Timer_timeout"]

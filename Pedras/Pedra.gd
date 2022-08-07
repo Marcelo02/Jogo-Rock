@@ -21,6 +21,7 @@ export var nivel = 1
 onready var original_Pos = position
 onready var shakeTimer = $shakeTimer
 onready var tween = $Tween
+onready var audio = $AudioStreamPlayer
 var shake_amount = 0
 signal quebrou
 
@@ -31,7 +32,8 @@ func _ready():
 func _process(delta):
 	#Shake da pedra
 	position = Vector2(rand_range(-shake_amount, shake_amount), rand_range(-shake_amount, shake_amount)) * delta + original_Pos
-	
+	if audio.playing == false:
+		pass
 	if vida <= 0:
 		emit_signal("quebrou")
 
@@ -44,7 +46,7 @@ func shake(new_shake, shake_time=0.2, shake_limit=150):
 	
 	tween.stop_all()
 	shakeTimer.start()
-
+	audio.play()
 func _on_Timer_timeout():
 	shake_amount = 0
 	

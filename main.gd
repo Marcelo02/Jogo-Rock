@@ -50,8 +50,8 @@ func _on_Pedra_input_event(viewport, event, shape_idx):
 		if event.is_action_pressed("mouse_left"):
 			#print("click") # Função de debug. APAGAR NA VERSÃO FINAL!
 			
-			pedra.shake(80,0.2,150)
 			
+			pedra.shake(80,0.2,150)
 			
 			pedra.vida -= picareta.dano
 			print("Vida:"+ str(pedra.vida))
@@ -117,3 +117,4 @@ func _on_upgrade_Shop():
 		iron_Button.text = "Vender Ferro: " + str(iron_Price) + "$"
 		gold_Button.text = "Vender Ouro: " + str(gold_Price) + "$"
 		shop_Button.text = "Melhorar Loja: " + str(upgrade_Shop) + "$"
+
