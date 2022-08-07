@@ -19,7 +19,7 @@ margin_left = 6.0
 margin_top = 138.0
 margin_right = 154.0
 margin_bottom = 161.0
-text = "Melhorar Picareta"
+text = "Melhorar Picareta: 5$"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -109,6 +109,16 @@ margin_top = 204.0
 margin_right = 842.0
 margin_bottom = 224.0
 text = "Vender Ouro: 10$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="upgrade_Shop" type="Button" parent="CanvasLayer"]
+margin_left = 7.0
+margin_top = 174.0
+margin_right = 151.0
+margin_bottom = 198.0
+text = "Melhorar Loja: 5$"
 __meta__ = {
 "_edit_use_anchors_": false
 }
