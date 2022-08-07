@@ -32,8 +32,6 @@ func _ready():
 func _process(delta):
 	#Shake da pedra
 	position = Vector2(rand_range(-shake_amount, shake_amount), rand_range(-shake_amount, shake_amount)) * delta + original_Pos
-	if audio.playing == false:
-		pass
 	if vida <= 0:
 		emit_signal("quebrou")
 

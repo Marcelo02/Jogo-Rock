@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Pedras/Pedra.gd" type="Script" id=1]
 [ext_resource path="res://assets/Pedras/rock.png" type="Texture" id=2]
-[ext_resource path="res://assets/Sounds/Hit sound.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/Sounds/Hit sound.tres" type="AudioStream" id=3]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {

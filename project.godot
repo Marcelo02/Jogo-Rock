@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Jogo Rock"
-run/main_scene="res://Jogo.tscn"
+run/main_scene="res://Menu.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -34,6 +34,12 @@ window/stretch/aspect="keep"
 [gdnative]
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
+
+[global]
+
+scene=false
+staring=false
+starting=false
 
 [input]
 
