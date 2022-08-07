@@ -49,7 +49,7 @@ func _on_Pedra_input_event(viewport, event, shape_idx):
 			pedra.vida -= picareta.dano
 			print("Vida:"+ str(pedra.vida))
 			Barra.value = pedra.vida
-			
+
 
 func _on_Pedra_quebrou():
 	
@@ -67,7 +67,7 @@ func _on_Pedra_quebrou():
 	pedra.vida = pedra.nivel
 	Level.text = "Lvl. " + str(pedra.nivel)
 	Barra.max_value = pedra.vida
-	
+
 
 
 func _on_sell_Coal():
