@@ -11,6 +11,7 @@ onready var shop_Button = $CanvasLayer/upgrade_Shop
 onready var coal_Button = $CanvasLayer/sell_Coal
 onready var iron_Button = $CanvasLayer/sell_Iron
 onready var gold_Button = $CanvasLayer/sell_Gold
+onready var musica = $StreamMusica
 var coal_Price = 1
 var iron_Price = 5
 var gold_Price = 10
@@ -30,6 +31,8 @@ func _ready():
 	
 	Barra.max_value = pedra.vida
 	Barra.value = pedra.vida
+	
+	musica.play()
 	
 
 func _process(delta):
