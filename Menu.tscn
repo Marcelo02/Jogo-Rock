@@ -9,12 +9,14 @@ font_path = "res://assets/Font/LEMONMILK-Medium.otf"
 
 [sub_resource type="DynamicFont" id=3]
 size = 15
+use_filter = true
 font_data = SubResource( 2 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 34
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
 font_data = ExtResource( 3 )
 
 [node name="Menu Principal" type="Node2D"]
